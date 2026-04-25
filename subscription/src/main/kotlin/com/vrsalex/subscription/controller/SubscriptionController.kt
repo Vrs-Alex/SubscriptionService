@@ -32,7 +32,7 @@ import java.util.UUID
 
 
 @RestController
-@RequestMapping("/api/subscriptions")
+@RequestMapping("/subscriptions")
 @Tag(name = "Subscriptions", description = "Управление подписками")
 class SubscriptionController(
     private val subscriptionService: SubscriptionService,
