@@ -3,6 +3,7 @@ package com.vrsalex.subscription.scheduler
 import com.vrsalex.subscription.database.repository.SubscriptionRepository
 import com.vrsalex.subscription.domain.SubscriptionStatus
 import com.vrsalex.subscription.service.SubscriptionService
+import jakarta.annotation.PostConstruct
 import org.slf4j.LoggerFactory
 import org.springframework.scheduling.annotation.EnableScheduling
 import org.springframework.scheduling.annotation.Scheduled
@@ -19,6 +20,7 @@ class SubscriptionScheduler(
 
 
     @Scheduled(cron = "0 0 0 * * *")
+    @PostConstruct
     fun expireSubscriptions() {
         log.info("Запуск проверки истекших подписок")
 

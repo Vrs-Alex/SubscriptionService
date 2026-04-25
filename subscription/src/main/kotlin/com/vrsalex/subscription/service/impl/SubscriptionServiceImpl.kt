@@ -79,6 +79,9 @@ class SubscriptionServiceImpl(
 
     override fun resumeSubscription(id: UUID): Subscription {
         val subscription = getSubscription(id)
+        require(!subscription.isExpired()) {
+            "Нельзя возобновить истёкшую подписку — сначала продлите её"
+        }
         val oldStatus = subscription.status
         val updated = subscription.transitionTo(SubscriptionStatus.ACTIVE)
         val saved = subscriptionRepository.save(updated)
