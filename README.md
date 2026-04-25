@@ -29,7 +29,7 @@ cron: "0 0 0 * * *"
 ## Swagger UI
 
 ```
-http://localhost:8080/swagger-ui.html
+http://localhost:8080/v1/api/swagger-ui/index.html
 ```
 
 ## Запуск
@@ -44,7 +44,7 @@ http://localhost:8080/swagger-ui.html
 docker-compose up --build
 ```
 
-Приложение будет доступно на `http://localhost:8080`
+Приложение будет доступно на `http://localhost:8080/v1/api/`
 
 ### Локально
 
