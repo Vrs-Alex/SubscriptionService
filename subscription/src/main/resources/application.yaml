@@ -26,12 +26,10 @@ spring:
       locations: classpath:db/migration
       baseline-on-migrate: true
 
-  springdoc:
-    openapi:
-      use-fqn: true
-    default-flat-param-object: true
-
-    task:
+  task:
       scheduling:
         pool:
           size: 1
+
+springdoc:
+  default-flat-param-object: true
